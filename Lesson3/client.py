@@ -2,6 +2,7 @@ import socket
 import json
 import sys
 from func import send_message, get_message
+from log.client_log_config import log
 
 
 def create_presence_message(account_name='Guest'):
@@ -11,6 +12,7 @@ def create_presence_message(account_name='Guest'):
             'account_name': account_name
         }
     }
+    log.info(result)
     return result
 
 
@@ -19,6 +21,7 @@ def process_answer(message):
         if message['response'] == 200:
             return '200: OK'
         return f'400: {message["error"]}'
+    log.info(message)
 
 
 def main():
@@ -31,7 +34,7 @@ def main():
         server_address = '127.0.0.1'
         server_port = 7777
     except ValueError:
-        print(
+        log.warning(
             'В качестве порта может быть указано только число в диапазоне от 1024 до 65535.')
         sys.exit(1)
 
@@ -43,7 +46,7 @@ def main():
         answer = process_answer(get_message(transport))
         print(answer)
     except (ValueError, json.JSONDecodeError):
-        print('Не удалось декодировать сообщение сервера.')
+        log.warning('Не удалось декодировать сообщение сервера.')
 
 
 if __name__ == '__main__':
