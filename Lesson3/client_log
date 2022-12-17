@@ -1,0 +1,6 @@
+2022-12-17 19:29:10,807 - INFO - client - {'action': 'presence', 'user': {'account_name': 'Guest'}} 
+2022-12-17 19:30:14,985 - WARNING - client - В качестве порта может быть указано только число в диапазоне от 1024 до 65535. 
+2022-12-17 19:31:19,188 - INFO - client - {'action': 'presence', 'user': {'account_name': 'Guest'}} 
+2022-12-17 19:32:53,090 - INFO - client - {'action': 'presence', 'user': {'account_name': 'Guest'}} 
+2022-12-17 19:33:36,477 - INFO - client - {'action': 'presence', 'user': {'account_name': 'Guest'}} 
+2022-12-17 19:36:06,208 - INFO - client - {'action': 'presence', 'user': {'account_name': 'Guest'}} 
