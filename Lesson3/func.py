@@ -1,5 +1,6 @@
 import socket
 import json
+from log.server_log_config import log
 
 
 def get_message(client):
@@ -10,6 +11,8 @@ def get_message(client):
         response = json.loads(json_response)
         if isinstance(response, dict):
             return response
+        log.info(response)
+
         raise ValueError
     raise ValueError
 
